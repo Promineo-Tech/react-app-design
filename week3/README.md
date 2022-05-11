@@ -132,7 +132,7 @@ There are a few popular libraries to do CSS-in-JS such as <a href="https://style
 
 CSS-in-JS automates the scoping by generating unique selectors similarly how CSS Modules does. 
 
-Styled Components is one of several approaches for CSS-in-JS. Styled components are thought of as "visual primitives for components", and their goal is to give us a flexible way to style components. The result is a tight coupling between components and their styles.
+Styled components are thought of as "visual primitives for components", and their goal is to give us a flexible way to style components. It is powered by tagged templates and allows to create normal React components by only defining styles.
 
 <strong>Install the Styled Components package:</strong>
 
@@ -173,4 +173,5 @@ Here, ```StyledButton``` is the styled component, and it will be rendered as an 
  - [CSS Modules Documentation](https://github.com/css-modules/css-modules) 
  - [CSS Modules - Create React App](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
  - [Styled Components Documentation](https://styled-components.com/docs)
+- [CSS-in-JS Explained](https://www.youtube.com/watch?v=ull9iCMTGDE)
  - [Using Styled Components](https://www.youtube.com/watch?v=pWps7PkrQaQ)
