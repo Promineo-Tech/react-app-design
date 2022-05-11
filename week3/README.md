@@ -21,7 +21,7 @@ The four essential phases or lifecycle attributed to a React component include:
 
 
 
-### React Asynchronous Data
+## React Asynchronous Data
 
 Usually, data from a remote backend/database arrives asynchronously for client-side applications like React. Thus it’s often the case that we must render a component before we can initiate the data fetching. 
 
@@ -36,18 +36,17 @@ A ```conditional rendering``` in React always happens if we have to render diffe
 For example, when the application initializes for the first time, there is no
 data to start with. Next, we are loading data and eventually, we have the data at our hands to display it. Sometimes the data fetching fails and we receive an error instead. 
 
-
-### Styling
+## Styling
 
 There are many ways (aka methodologies) to style a React application.
 
 ![Styling Patterns](images/styling-patterns.png)
 
-#### Modern Component Architecture
+### Modern Component Architecture
 
 There are a few “hard problems” when it comes to CSS. One of the very hardest has to do with CSS global nature: how do we structure large applications to avoid specificity wars and naming collisions? How do we identify which styles affect a given element?
 
-#### CSS Stylesheets 
+### CSS Stylesheets 
 
 Writing CSS in a stylesheet is probably the most common and basic approach to styling a React application.
 
@@ -77,7 +76,7 @@ export default function App() {
 }
 ```
 
-#### CSS Modules
+### CSS Modules
 
 <a href="https://developer.adobe.com/commerce/pwa-studio/guides/general-concepts/css-modules/
 ">CSS Modules</a> are .css files in which all class names are scoped locally by default.
@@ -127,9 +126,13 @@ export default function App() {
   );
 }
 ```
-#### Styled Components (CSS-in-JS)
+### CSS-in-JS
 
-<a href="https://styled-components.com/">Styled Components</a> is one of several approaches for CSS-in-JS. Styled components are thought of as "visual primitives for components", and their goal is to give us a flexible way to style components. The result is a tight coupling between components and their styles.
+There are a few popular libraries to do CSS-in-JS such as <a href="https://styled-components.com/">styled components</a>, and <a href="https://emotion.sh/docs/styled">Emotion</a>. CSS-in-JS is not a specific library, it’s a concept that tries to solve the problem of styling in React applications.
+
+CSS-in-JS automates the scoping by generating unique selectors similarly how CSS Modules does. 
+
+Styled Components is one of several approaches for CSS-in-JS. Styled components are thought of as "visual primitives for components", and their goal is to give us a flexible way to style components. The result is a tight coupling between components and their styles.
 
 <strong>Install the Styled Components package:</strong>
 
@@ -159,6 +162,10 @@ const Button = () => {
 ```
 
 Here, ```StyledButton``` is the styled component, and it will be rendered as an HTML button with the contained styles. ```styled``` is an <a href="https://styled-components.com/docs/api#styled">internal utility method</a> that transforms the styling from JavaScript into actual CSS.
+
+> The usual knock against CSS-in-JS libraries involves performance. These libraries do some relatively heavy lifting under the hood: compiling and interpolating props for styling directives in tagged template literals, building a graph of managed elements, preprocessing CSS, and injecting the CSS into the page.
+
+### Inline Styling
 
 
 ## References
