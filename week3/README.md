@@ -1,5 +1,7 @@
 ## Movie Reviewer Database App - Part 3
 
+![Modal](images/modal.png)
+![Filtering](images/filtering.png)
 
 ## Component Life Cycle Methods
 
