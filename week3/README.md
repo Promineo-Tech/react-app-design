@@ -163,8 +163,7 @@ Here, ```StyledButton``` is the styled component, and it will be rendered as an 
 
 ## References
 
-[CSS Modules Documentation](https://github.com/css-modules/css-modules) 
-[CSS Modules - Create React App](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
-[Styled Components Documentation](https://styled-components.com/docs)
-
-[Using Styled Components](https://www.youtube.com/watch?v=pWps7PkrQaQ)
+ - [CSS Modules Documentation](https://github.com/css-modules/css-modules) 
+ - [CSS Modules - Create React App](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
+ - [Styled Components Documentation](https://styled-components.com/docs)
+ - [Using Styled Components](https://www.youtube.com/watch?v=pWps7PkrQaQ)
