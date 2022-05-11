@@ -127,16 +127,42 @@ export default function App() {
   );
 }
 ```
-
-
-
-
 #### Styled Components (CSS-in-JS)
 
+<a href="https://styled-components.com/">Styled Components</a> is one of several approaches for CSS-in-JS. Styled components are thought of as "visual primitives for components", and their goal is to give us a flexible way to style components. The result is a tight coupling between components and their styles.
 
+<strong>Install the Styled Components package:</strong>
+
+```
+npm i styled-components
+```
+
+<strong>Import into component</strong>
+
+```JS
+import styled from "styled-components";
+```
+
+<strong>Create style object and use inline</strong>
+
+```JS
+const StyledButton = styled.button`
+   width: 200px;
+   border: none;
+   background-color: grey;
+`;
+
+const Button = () => {
+
+  return <StyledButton>This is a button</StyledButton>;
+}
+```
+
+Here, ```StyledButton``` is the styled component, and it will be rendered as an HTML button with the contained styles. ```styled``` is an internal utility method that transforms the styling from JavaScript into actual CSS.
 
 
 ## References
 
 [CSS Modules Documentation](https://github.com/css-modules/css-modules) 
 [CSS Modules - Create React App](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
+[Styled Components Documentation](https://styled-components.com/docs)
