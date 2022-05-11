@@ -47,9 +47,7 @@ There are many ways (aka methodologies) to style a React application.
 
 There are a few “hard problems” when it comes to CSS. One of the very hardest has to do with CSS global nature: how do we structure large applications to avoid specificity wars and naming collisions? How do we identify which styles affect a given element?
 
-
 #### CSS Stylesheets 
-
 
 Writing CSS in a stylesheet is probably the most common and basic approach to styling a React application.
 
@@ -58,7 +56,6 @@ Plain CSS (CSS in CSS) would be accomplished by either having a global CSS file 
 > The problem with creating a separate .css file per component is possible name conflicts and specificity issues. 
 
 ```CSS
-
 /* global.css */
 
 .button {
@@ -82,6 +79,47 @@ export default function App() {
 
 #### CSS Modules
 
+<a href="https://developer.adobe.com/commerce/pwa-studio/guides/general-concepts/css-modules/
+">CSS Modules</a> are .css files in which all class names are scoped locally by default.
+
+CSS Modules are not part of the CSS Spec or browser API. It is part of the build process of webpack or other module bundlers (Parcel, Vite, etc). 
+
+CSS modules give you the ability to control your element styles in a more granular way. They allow you to build different layers of styles while building your application
+using a modular approach. 
+
+```CS
+/* Button.module.css  */
+
+.button {
+  width: 200px;
+  border: none;
+  background-color: blue;
+}
+```
+
+```JS
+/* Button.jsx */
+
+import styles from "./Button.module.css";
+
+const Button = () => {
+  return <button className={styles.button}>This is a button</button>;
+};
+
+export default Button;
+```
+
+```JS
+import "./Button.jsx"
+
+export default function App() {
+  return (
+    <>
+      <Button>I am a button</button>
+    </>
+  );
+}
+```
 
 
 #### Styled Components (CSS-in-JS)
