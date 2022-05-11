@@ -158,7 +158,7 @@ const Button = () => {
 }
 ```
 
-Here, ```StyledButton``` is the styled component, and it will be rendered as an HTML button with the contained styles. ```styled``` is an internal utility method that transforms the styling from JavaScript into actual CSS.
+Here, ```StyledButton``` is the styled component, and it will be rendered as an HTML button with the contained styles. ```styled``` is an <a href="https://styled-components.com/docs/api#styled">internal utility method</a>that transforms the styling from JavaScript into actual CSS.
 
 
 ## References
@@ -166,3 +166,5 @@ Here, ```StyledButton``` is the styled component, and it will be rendered as an 
 [CSS Modules Documentation](https://github.com/css-modules/css-modules) 
 [CSS Modules - Create React App](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
 [Styled Components Documentation](https://styled-components.com/docs)
+
+[Using Styled Components](https://www.youtube.com/watch?v=pWps7PkrQaQ)
