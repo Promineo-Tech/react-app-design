@@ -130,9 +130,9 @@ export default function App() {
 
 There are a few popular libraries to do CSS-in-JS such as <a href="https://styled-components.com/">styled components</a>, and <a href="https://emotion.sh/docs/styled">Emotion</a>. CSS-in-JS is not a specific library, it’s a concept that tries to solve the problem of styling in React applications.
 
-CSS-in-JS automates the scoping by generating unique selectors similarly how CSS Modules does. 
+Styled-components are designed to eliminate the mapping between components and styles, so when you’re defining your styles, you’re really just building a regular React component with your styles attached.
 
-Styled components are thought of as "visual primitives for components", and their goal is to give us a flexible way to style components. It is powered by tagged templates and allows to create normal React components by only defining styles.
+ styled-components use <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals#tagged_templates">tagged template literals</a> in JavaScript to style components. Tagged template literals allows you to parse template literals with a function. It is powered by tagged templates and allows to create normal React components by only defining styles.
 
 <strong>Install the Styled Components package:</strong>
 
