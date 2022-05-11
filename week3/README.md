@@ -84,10 +84,17 @@ export default function App() {
 
 CSS Modules are not part of the CSS Spec or browser API. It is part of the build process of webpack or other module bundlers (Parcel, Vite, etc). 
 
-CSS modules give you the ability to control your element styles in a more granular way. They allow you to build different layers of styles while building your application
-using a modular approach. 
+CSS modules give you the ability to control your element styles in a more granular way. They allow you to build different layers of styles while building your application using a modular approach. 
 
-```CS
+A CSS Module is simply a .css file, where classes act similarly to local variables in Javascript. 
+
+The build tools (Create-React-App) transforms your class names into variables that are exported separately as ```named exports``` and as an ```object```. Another CSS file gets generated and then mapped to the associated const . As a result, your CSS is specifically scoped to the space it is used.
+
+> By default CSS Modules are scoped only to classes. This means that #id and global selectors are not processed by CSS Modules. However, descendants of classes are scoped. For example, .container img will be scoped by CSS Modules but img on its own will not.
+
+![CSS Modules](images/css-modules.png)
+
+```CSS
 /* Button.module.css  */
 
 .button {
@@ -122,4 +129,14 @@ export default function App() {
 ```
 
 
+
+
 #### Styled Components (CSS-in-JS)
+
+
+
+
+## References
+
+[CSS Modules Documentation](https://github.com/css-modules/css-modules) 
+[CSS Modules - Create React App](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/)
