@@ -1,5 +1,7 @@
 ## Other Build Tools  
 
+> Go <a href="https://github.com/Promineo-Tech/react-app-design/tree/main/week2/CRA">here</a> to see what's new in React Week 2.
+
 Create React App is not the only build tool you can use to scaffold a React project.
 
 Other tools such as <a href="https://vitejs.dev/">Vite</a> and <a href="https://parceljs.org/">Parcel</a> can scaffold your React with a faster (currently) build process. Vite has pre-packed templates for a complete React project while Parcel (currently)
