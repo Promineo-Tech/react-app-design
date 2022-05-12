@@ -5,35 +5,42 @@
 
 ## Component Life Cycle Methods
 
-The methods invoked during different phase/lifecycle of a component is what's
-popularly known as the ```component lifecycle methods```. 
+When writing React components, we sometimes need access to lifecycle events to handle a variety of side effects: fetching data on mount, sanitizing props when the component updates, cleaning up before the component unmounts, etc.
 
-In the mounting and updating phases, the render lifecycle method is always invoked.
-There are lifecycle methods available on all 4 phases of a component — mounting,
-updating, unmounting and error handling.
+Until React 16.8, the most common solution for handling lifecycle events required ES6 class-based components. Class components gave React developers access to the most common lifecycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount.
+
+![Class Component Lifecycle Methods](images/life-cycle-methods-classes.png)
 
 - Mounting — The component is created and then inserted into the DOM
 - Updating — A React component is updated via changes in props or state.
 - Unmounting — The component is removed from the DOM.
 - Error Handling — When there's a bug, the component is in the error
 
-In class components, there are methods that a developer can use to inject code during the ```component lifecycle```
+These 'lifecycle' methods available only in `class components`, were used to to inject code during the `component lifecycle`.
 
 - ```componentDidMount()``` runs after the component is mounted and rendered to the DOM
 - ```componentDidUpdate()``` runs after the updating happens. This one is called always except for the initial render. 
 - ```componentWillUnmount()``` run just before the component is removed from the DOM. 
 
-> Functional components do not have access to any of these lifecycle methods.
+The issue with these class-based component lifecycle methods were re-usability (e.g. must be a member to the class itself) which cause additional complexity on building React applications to scale for maintainabity and re-use.
 
-![Component Lifecycle Methods](images/life-cycle-methods-classes.png)
+But starting with React version 18, <a href="https://reactjs.org/blog/2019/02/06/react-v16.8.0.html">hooks were added</a>. Those lifecycle methods that were used within class components were replaced with various React hooks. 🤓
 
-## React Component Lifecycle with Hooks
+## React Lifecycle using Hooks
+
+![Hooks Component Lifecycle](images/functions-lifecycle-hooks.png)
 
 You can take advantage of the ```useEffect hook``` to achieve the same results as with the componentDidMount, componentDidUpdate and componentWillUnmount methods. 
 
 useEffect accepts two parameters. The first one is a callback which runs after render, much like in componentDidMount. The second parameter is the effect dependency array. If you want to run it on mount and unmount only, pass an empty array [].
 
+![Hooks React Lifecycle](images/react-hooks-lifecycle.png)
+
 ### useEffect hook
+
+The `useEffect` hook allows injection of code at the end of the `mounting stage` where the component just rendered to the DOM. It also can be run whenever state changes and forces the component to the `updating` stage and re-renders to the DOM.
+
+So you can say `loosely` that useEffect hook has the same functionality as the lifecycle method of componentDidMount() and componentDidUpdate().
 
 <a href="https://en.wikipedia.org/wiki/Side_effect_(computer_science)">Side effect</a> (often simply called effect) isn't a term that's specific to React. It's a general concept about the behavior of a function. 
 
@@ -309,3 +316,4 @@ Here, ```StyledButton``` is the styled component, and it will be rendered as an 
  - [Conditional Rendering Explained](https://www.youtube.com/watch?v=BMq69JNUZ_U)
  - [Conditional Rendering Reference - W3Schools](https://www.w3schools.com/react/react_conditional_rendering.asp)
  - [React Component Folder Structure](https://www.taniarascia.com/react-architecture-directory-structure/)
+ - [React Hooks Lifecycle Diagram](https://github.com/Wavez/react-hooks-lifecycle)
