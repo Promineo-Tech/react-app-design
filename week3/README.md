@@ -23,6 +23,8 @@ In class components, there are methods that a developer can use to inject code d
 - ```componentDidUpdate()``` runs after the updating happens. This one is called always except for the initial render. 
 - ```componentWillUnmount()``` run just before the component is removed from the DOM. 
 
+> Functional components do not have access to any of these lifecycle methods.
+
 ![Component Lifecycle Methods](images/life-cycle-methods-classes.png)
 
 ### React Component Lifecycle with Hooks
