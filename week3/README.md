@@ -267,3 +267,4 @@ Here, ```StyledButton``` is the styled component, and it will be rendered as an 
  - [useEffect - W3Schools](https://www.w3schools.com/react/react_useeffect.asp)
  - [useEffect - Sony Sangha Youtube](https://www.youtube.com/watch?v=UVhIMwHDS7k)
  - [Conditional Rendering Explained](https://www.youtube.com/watch?v=BMq69JNUZ_U)
+ - [React Component Folder Structure](https://www.taniarascia.com/react-architecture-directory-structure/)
