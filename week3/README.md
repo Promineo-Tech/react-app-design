@@ -100,10 +100,50 @@ The component would be rendered, triggering a call to fetch(), which would event
 
 ### Conditional Rendering
 
-A ```conditional rendering``` in React always happens if we have to render different JSX based on information (e.g. state, props, api request, etc.). Dealing with asynchronous data is a good use case for making use of conditional rendering. 
+Conditional rendering is a term to describe the ability to render different user interface (UI) markup if a condition is true or false. In React, it allows us to render different elements or components based on a condition.
 
-For example, when the application initializes for the first time, there is no
-data to start with. Next, we are loading data and eventually, we have the data at our hands to display it. Sometimes the data fetching fails and we receive an error instead. 
+This concept is applied often in the following scenarios:
+
+ - Rendering external data from an API.
+ - Showing or hiding elements.
+ - Toggling application functionality.
+ - Implementing permission levels.
+ - Handling authentication and authorization.
+
+ You can use JavaScript operators like `if` or the `conditional (ternary) operator` to create elements representing the current state, and let React update the UI to match them.
+
+```JS
+function Greeting(props) {
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
+}
+
+function Mailbox(props) {
+  return (
+    <div>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
+}
+
+function Login(props) {
+  return (
+    <div>
+      {props.isLoggedIn
+        ? <LogoutButton onClick={handleLogoutClick} />
+        : <LoginButton onClick={handleLoginClick} />
+      }
+    </div>
+  );
+}
+```
 
 ## Styling
 
@@ -267,4 +307,5 @@ Here, ```StyledButton``` is the styled component, and it will be rendered as an 
  - [useEffect - W3Schools](https://www.w3schools.com/react/react_useeffect.asp)
  - [useEffect - Sony Sangha Youtube](https://www.youtube.com/watch?v=UVhIMwHDS7k)
  - [Conditional Rendering Explained](https://www.youtube.com/watch?v=BMq69JNUZ_U)
+ - [Conditional Rendering Reference - W3Schools](https://www.w3schools.com/react/react_conditional_rendering.asp)
  - [React Component Folder Structure](https://www.taniarascia.com/react-architecture-directory-structure/)
