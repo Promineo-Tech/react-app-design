@@ -5,7 +5,6 @@
 ### Create React App 
 
 <a href="https://create-react-app.dev/">Create React App</a> is a build tool-chain that scaffolds a new React project. It includes the following tools:
-
 - <a href="https://www.npmjs.com/package/react">react</a> and <a href="https://www.npmjs.com/package/react-dom">react-dom</a> packages
 - <a href="https://babeljs.io/">Babel</a> to ```transpile``` the JSX to react elements (DOM elements)
 - <a href="https://webpack.js.org/">Webpack</a> to ```bundle``` all the files into one file
