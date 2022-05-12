@@ -75,6 +75,26 @@ export default function App() {
   );
 }
 ```
+### Inline Styling
+
+Inline styling works the same for HTML documents as it does for React. The difference is that you need to create an object to pass the CSS properties that you want.
+
+The properties in the ```styles``` object must be camelCase style because kebab-case doesn't fit because of syntax rule. - is not allowed in identifier.
+
+
+```JS
+const styles = {
+  width: 200px,
+  border: none,
+  backgroundColor: blue
+};
+
+const Button = () => (
+  <button style={styles}>This is a button</button
+)
+```
+
+> Some of the drawbacks of inline-styling in React is the complexity for adding pseudo-selectors (e.g. :hover), inability to pass props, non-support of media queries, 
 
 ### CSS Modules
 
@@ -164,8 +184,6 @@ const Button = () => {
 Here, ```StyledButton``` is the styled component, and it will be rendered as an HTML button with the contained styles. ```styled``` is an <a href="https://styled-components.com/docs/api#styled">internal utility method</a> that transforms the styling from JavaScript into actual CSS.
 
 > The knock against CSS-in-JS libraries involves performance. These libraries do some relatively heavy lifting under the hood: compiling and interpolating props for styling directives in tagged template literals, building a graph of managed elements, preprocessing CSS, and injecting the CSS into the page.
-
-### Inline Styling
 
 
 ## References
