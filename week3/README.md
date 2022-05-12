@@ -12,18 +12,16 @@ In the mounting and updating phases, the render lifecycle method is always invok
 There are lifecycle methods available on all 4 phases of a component — mounting,
 updating, unmounting and error handling.
 
-The four essential phases or lifecycle attributed to a React component include:
-
 - Mounting — The component is created and then inserted into the DOM
 - Updating — A React component is updated via changes in props or state.
 - Unmounting — The component is removed from the DOM.
 - Error Handling — When there's a bug, the component is in the error
 
-During the mounting phase of the lifecycle, the class component is inserted into the DOM.  ```componentDidMount()``` is a lifecycle method that runs after the component is mounted and rendered to the DOM. 
+In class components, there are methods that a developer can use to inject code during the ```component lifecycle```
 
-The ```componentDidUpdate()``` method is called right after the updating happens. This one is called always except for the initial render. 
-
-```componentWillUnmount()``` is invoked just before the component is removed from the DOM. 
+- ```componentDidMount()``` runs after the component is mounted and rendered to the DOM
+- ```componentDidUpdate()``` runs after the updating happens. This one is called always except for the initial render. 
+- ```componentWillUnmount()``` run just before the component is removed from the DOM. 
 
 ![Component Lifecycle Methods](images/life-cycle-methods-classes.png)
 
