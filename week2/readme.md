@@ -11,7 +11,7 @@ needs a manual installation of the ```react``` and ```react-dom``` packages and 
 
 A bundler is a development tool that will compress and minify all your code. And if you have a function that is never used, it will detect that and remove that. A bundler generates a dependency graph as it traverses your first code files. This implies that beginning with the entry point you specified, the module bundler keeps track of both your source files’ dependencies and third-party dependencies. This dependency graph guarantees that all source and associated code files are kept up to date and error-free.
 
-The bundler tool that is included within the Create React App tool is ```Webpack```. Webpack is the most popular bundler tool by a large margin, but that does not mean it does not have its problems. 
+The bundler tool that is included within the <a href="https://create-react-app.dev/">Create React App</a> tool is ```Webpack```. Webpack is the most popular bundler tool by a large margin, but that does not mean it does not have its problems. 
 
 Webpack can be confusing to configure manually; can be slow to start up its development server because it has to bundle all files in node_modules; bundle sizes can be large because it required polyfills for loading modules.
 
