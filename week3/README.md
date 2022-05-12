@@ -27,7 +27,7 @@ In class components, there are methods that a developer can use to inject code d
 
 ![Component Lifecycle Methods](images/life-cycle-methods-classes.png)
 
-### React Component Lifecycle with Hooks
+## React Component Lifecycle with Hooks
 
 You can take advantage of the ```useEffect hook``` to achieve the same results as with the componentDidMount, componentDidUpdate and componentWillUnmount methods. 
 
