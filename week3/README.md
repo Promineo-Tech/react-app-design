@@ -34,8 +34,6 @@ You can take advantage of the ```useEffect hook``` to achieve the same results a
 
 useEffect accepts two parameters. The first one is a callback which runs after render, much like in componentDidMount. The second parameter is the effect dependency array. If you want to run it on mount and unmount only, pass an empty array [].
 
-![Hooks React Lifecycle](images/react-hooks-lifecycle.png)
-
 ### useEffect hook
 
 The `useEffect` hook allows injection of code at the end of the `mounting stage` where the component just rendered to the DOM. It also can be run whenever state changes and forces the component to the `updating` stage and re-renders to the DOM.
