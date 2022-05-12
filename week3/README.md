@@ -7,7 +7,7 @@
 
 When writing React components, we sometimes need access to lifecycle events to handle a variety of side effects: fetching data on mount, sanitizing props when the component updates, cleaning up before the component unmounts, etc.
 
-Until React 16.8, the most common solution for handling lifecycle events required ES6 class-based components. Class components gave React developers access to the most common lifecycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount.
+Until React 16.8, the most common solution for handling lifecycle events required `ES6 class-based components`. Class components gave React developers access to the most common lifecycle methods: componentDidMount, componentDidUpdate, and componentWillUnmount.
 
 ![Class Component Lifecycle Methods](images/life-cycle-methods-classes.png)
 
