@@ -15,7 +15,7 @@ The bundler tool that is included within the <a href="https://create-react-app.d
 
 > Webpack can be confusing to <a href="https://webpack.js.org/configuration/">configure</a> manually; can be slow because it has to bundle all files in node_modules; bundle sizes can be large because it required polyfills for loading modules.
 
-But never fear, there are alternatives.
+But never fear, there are alternatives. 😊
 
 ### Parcel
 
