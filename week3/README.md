@@ -25,7 +25,9 @@ The ```componentDidUpdate()``` method is called right after the updating happens
 
 ```componentWillUnmount()``` is invoked just before the component is removed from the DOM. 
 
-### React component lifecycle with hooks
+![Component Lifecycle Methods](images/life-cycle-methods-classes.png)
+
+### React Component Lifecycle with Hooks
 
 You can take advantage of the ```useEffect hook``` to achieve the same results as with the componentDidMount, componentDidUpdate and componentWillUnmount methods. 
 
@@ -252,7 +254,6 @@ const Button = () => {
 Here, ```StyledButton``` is the styled component, and it will be rendered as an HTML button with the contained styles. ```styled``` is an <a href="https://styled-components.com/docs/api#styled">internal utility method</a> that transforms the styling from JavaScript into actual CSS.
 
 > The knock against CSS-in-JS libraries involves performance. These libraries do some relatively heavy lifting under the hood: compiling and interpolating props for styling directives in tagged template literals, building a graph of managed elements, preprocessing CSS, and injecting the CSS into the page.
-
 
 ## References
 
