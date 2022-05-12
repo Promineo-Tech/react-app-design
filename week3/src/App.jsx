@@ -47,7 +47,8 @@ function App() {
 
   const handleFilters = (categories) => {
 
-    const _movies = [...movies];
+    // reset movies to show all
+    const _movies = [...movies].map(movie => { movie.hidden = false; return movie; });
     const _categories = [];
 
     // convert categories to an array
@@ -58,25 +59,21 @@ function App() {
         }
     });
 
-    // Reset all filters, show all movies
-    if (!_categories.length) {
-
-        const _reset = _movies.map(movie => { movie.hidden = false; return movie; });
-        setMovies(_reset);
-        return;
+    // If no filtered categories, send back all "reset" movies
+    if (!_categories.length) { 
+      setMovies(_movies); 
+      return;
     }
-    
+
+    // hide movies that don't match the categories (hidden = true); 
     _movies.forEach((movie) => {
 
-      if (!movie.categories.some(category => _categories.includes(category)) && !movie.hidden) {
+      if (!movie.categories.some(category => _categories.includes(category))) {
           movie.hidden = true;
-      } else {
-            movie.hidden = false;
-      }
+      } 
     });
 
     setMovies(_movies);
- 
   }
 
   return (

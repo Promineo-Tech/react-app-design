@@ -6,3 +6,6 @@
 ### Profiler
 
 ### Lazy Loading with React.Lazy and Suspense
+
+
+### useMemo
