@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import CheckBox from "../../presentational/Checkbox/CheckBox";
+import styles from "./Filters.module.css";
 
 const Filters = ({handleFilters}) => {
 
@@ -78,7 +79,7 @@ const Filters = ({handleFilters}) => {
     */
 
     return (
-        <div className="movies-filter">
+        <div className={styles.moviesFilter}>
         <h3>Filter by: </h3>
         <CheckBox
             name="categories"

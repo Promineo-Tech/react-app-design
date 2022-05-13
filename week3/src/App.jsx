@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import {Routes, Route} from 'react-router-dom';
-import Home from './components/views/Home';
-import Movies from './components/views/Movies';
+import Home from './components/views/Home/Home';
+import Movies from './components/views/Movies/Movies';
 import Dashboard from './components/views/Dashboard';
-import Header from "./components/layout/Header/Header.jsx";
-import Footer from "./components/layout/Footer/Footer.jsx";
-import {navLinks} from "./assets/data/navLinks";
+import Header from "./components/layout/Header/Header";
+import Footer from "./components/layout/Footer/Footer";
+import {navLinks} from "./assets/data/navLinks.js";
 import API from "./services/";
 
 import './assets/styles/reset.css';
@@ -47,7 +47,7 @@ function App() {
 
   const handleFilters = (categories) => {
 
-    // reset movies to show all
+    // reset movies to show all (hidden: false)
     const _movies = [...movies].map(movie => { movie.hidden = false; return movie; });
     const _categories = [];
 
@@ -59,13 +59,13 @@ function App() {
         }
     });
 
-    // If no filtered categories, send back all "reset" movies
+    // If no filtered categories, send back all "reset" movies with no changes
     if (!_categories.length) { 
       setMovies(_movies); 
       return;
     }
 
-    // hide movies that don't match the categories (hidden = true); 
+    // hide movies that don't match the any of the selected categories (hidden = true); 
     _movies.forEach((movie) => {
 
       if (!movie.categories.some(category => _categories.includes(category))) {
@@ -73,6 +73,7 @@ function App() {
       } 
     });
 
+    // send back the filtered movies (i.e. movies that match at least one of the selected categories)
     setMovies(_movies);
   }
 

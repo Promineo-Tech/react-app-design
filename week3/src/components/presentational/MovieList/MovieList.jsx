@@ -1,9 +1,10 @@
 import Movie from "../../container/Movie/Movie";
+import styles from "./MovieList.module.css";
 
 const MovieList = ({movies, addReview}) => {
  
     return (
-            <div className="movies-list">
+            <div className={styles.moviesList}>
                 {
                     movies.map((movie, index) => {
                         

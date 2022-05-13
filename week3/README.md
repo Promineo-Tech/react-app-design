@@ -225,6 +225,27 @@ The build tools (Create-React-App) transforms your class names into variables th
 
 > By default CSS Modules are scoped only to classes. This means that #id and global selectors are not processed by CSS Modules. However, descendants of classes are scoped. For example, .container img will be scoped by CSS Modules but img on its own will not.
 
+<strong>Naming</strong>
+
+CSS Modules naming convention <a href="https://github.com/css-modules/css-modules#naming">recommends camelCasing</a>, and not using dashes or underscores in the CSS class selector names. This following JavaScript naming conventions for class member naming.
+
+You can either:
+
+ - Use dashes or underscores in CSS selector names, but in JSX use brackets `[]` wrapped around the name prefaced by the object referencing the .css file.
+ - Use camelCasing for your CSS selector names in your .css file.
+
+ ```JS
+// Movie.module.css: 
+.movie-list {
+
+// Movie.jsx: 
+import style from './Movies.module.css';
+
+<div className=style['movie-list']>{movie}</div>
+ ```
+
+Reference: <a href="https://github.com/css-modules/css-modules#naming">https://github.com/css-modules/css-modules#naming</a>
+
 ![CSS Modules](images/css-modules.png)
 
 ```CSS
