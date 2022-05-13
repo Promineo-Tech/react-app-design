@@ -1,5 +1,6 @@
 import ReviewForm from "../../container/ReviewForm/ReviewForm";
 import Modal from 'react-modal';
+import styles from "./ReviewModal.module.css";
 
 Modal.setAppElement('#root');
 
@@ -26,9 +27,9 @@ const ReviewModal = ({movie, addReview, isOpen, closeModal}) => {
             style={modalStyles}
         >
           
-            <div className="review-modal-content">
-                <div className="review-modal-header">
-                    <button className="modal-close-button" onClick={closeModal}>X</button>
+            <div className={styles.reviewModalContent}>
+                <div className={styles.reviewModalHeader}>
+                    <button className={styles.modalCloseButton} onClick={closeModal}>X</button>
                     <h2>{movie.title}</h2>
                     <h4>Post your review</h4>
                 </div>

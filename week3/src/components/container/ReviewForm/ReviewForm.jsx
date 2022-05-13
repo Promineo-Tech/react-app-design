@@ -1,4 +1,5 @@
 import StarRating from "../StarRating/StarRating";
+import styles from "./ReviewForm.module.css";
 
 const ReviewForm = ({id, addReview, closeModal}) => {
 
@@ -12,7 +13,7 @@ const ReviewForm = ({id, addReview, closeModal}) => {
     }
 
     return (
-        <div className="review-form">
+        <div className={styles.reviewForm}>
             <form onSubmit = {submitHandler}>
                 <label>Stars:</label>
                     <StarRating name = "stars" stars = "0"/>

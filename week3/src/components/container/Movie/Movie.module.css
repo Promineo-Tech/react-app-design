@@ -57,3 +57,10 @@
     color:#999;
     font-size:16px;
 }
+
+.reviewContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-grow: 0;
+}

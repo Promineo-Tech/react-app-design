@@ -71,108 +71,19 @@ main p {
 
 /* ==========================================================================
    Reviews 
+
+   => ./components/presentational/Reviews/Reviews.module.css
    ========================================================================== */
    
-.review-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex-grow: 0;
-}
-
-.review-list {
-    margin: 0 .5rem 1rem 0;
-    overflow-y: auto; /* shows vertical scroll if needed */
-}   
-
-.review-list ul{
-    list-style-type: none;
-}
-
-.review {
-    padding: 0 0 .5rem 0;
-}
-.review-user-info {
-    font-size: .9rem;
-}
-
-.review-form {
-    padding: 2%;
-    width: 98%;
-    margin: 1rem auto 0;
-}
-
-.review-form form {
-   display: flex;
-   flex-direction: column;
-}
-
-.review-form label {
-    font-weight: bold;
-}
-
-.review-form textarea {
-    font-size: 1.3rem;
-    padding: .4rem;
-    border: 1px solid #ccc;
-}
-
-/*  
- *  Disable click and hover events for other users ratings 
- *  note: In production-grade code, you would need a prop(s) to properly disable
-*/
-.review-list .star {
-    pointer-events: none;
-}
-
 /* ==========================================================================
-   Star Component 
+   StarRating Component 
+
+   => ./components/container/StarRating/StarRating.module.css
    ========================================================================== */
 
-.star {
-    display: flex;
-    margin-bottom: .5rem;
-}
-
-.star input[type="radio"] {
-    display: none;
-}
-
-.star-icon {
-    cursor: pointer;
-    transition: color 500ms;
-}
-
 /* ==========================================================================
-   Modal Component 
+   ReviewModal Component 
+
+   => ./components/presentational/ReviewModal/ReviewModal.module.css
    ========================================================================== */
 
-.review-modal-content  {
-   margin-bottom: 1rem;
-}
-
-.review-modal-header {
-   background-color: #333366;
-   padding: .5rem 0 0 1rem;
-   color: #fff;
-   font-weight: 400;
-   height: 5rem;
-}
-
-.review-modal-header h2 {
-    font-size: 1.5rem;
-}
-
-.modal-close-button {
-    cursor: pointer;
-    position: absolute; 
-    top: 0;
-    right: 0;
-    margin: .6rem 1rem 0 0;
-    background-color: #333366;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #fff;
-    padding: .2rem;
-}
