@@ -4,7 +4,7 @@
 
 ![What's Playing](images/now-playing.png)
 
-![IMDB](images/IMDB.png)
+![IMDB](images/IMDB-api-now-playing.png)
 
 ## Authentication 
 
