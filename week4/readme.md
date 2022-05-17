@@ -6,6 +6,19 @@
 
 ![IMDB](images/IMDB-api-now-playing.png)
 
+## API Keys
+
+
+
+### .env
+
+
+
+![ENV](images/ENV.png)
+
+
+![bundle file](images/bundle.png)
+
 ## Authentication 
 
 Many web applications are a mix of public and private pages. 

@@ -2,6 +2,7 @@ function parseNowPlaying(data) {
 
     return data.results.map((item) => {
         return {
+            id: item.id,
             title: item.title,
             release: item.release_date,
             rating: item.vote_average,

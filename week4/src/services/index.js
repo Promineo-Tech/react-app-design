@@ -1,5 +1,3 @@
-const API_KEY = process.env.REACT_APP_API_KEY;  
-
 /*
 
    Create-react-app automatically reads keys that begin with REACT_APP and 
@@ -12,12 +10,11 @@ const API_KEY = process.env.REACT_APP_API_KEY;
          To be secure, should be server-side but for this project, it's fine.
 
    https://create-react-app.dev/docs/adding-custom-environment-variables/
-
 */
 
-const URL = "https://626adc4f6a86cd64adb45a12.mockapi.io/movies";
+const API_KEY = process.env.REACT_APP_API_KEY; // from .env file
 
-async function getAllMovies () {
+async function getAllMovies (URL) {
 
     try {
        const response = await fetch(URL);

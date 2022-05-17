@@ -37,7 +37,7 @@ const NowPlaying = () => {
         <div className={styles.nowPlaying}>
             {
                 movies.map((movie) => (
-                    <article className={styles.card}>
+                    <article key={movie.id} className={styles.card}>
                          <img className={styles.poster} src={movie.poster} alt={movie.title} />
                          <div className={styles.details}>
                              <h3> 

@@ -11,6 +11,8 @@ import {getAllMovies} from "./services/";
 import './assets/styles/reset.css';
 import './assets/styles/global.css';
 
+const URL = "https://626adc4f6a86cd64adb45a12.mockapi.io/movies"
+
 function App() {
   const [movies, setMovies] = useState([]);
   const [featuredMovies, setFeaturedMovies] = useState([]);
@@ -30,7 +32,7 @@ function App() {
 
     setIsLoading(true);
     
-    getAllMovies()
+    getAllMovies(URL)
         .then((data) => {
             setMovies(data);
             setFeaturedMovies([...data].filter(movie => movie.featured === true));
