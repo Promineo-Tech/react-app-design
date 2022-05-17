@@ -1,7 +1,0 @@
-# Deployment
-
-## Firebase
-
-## Vercel
-
-## AWS
