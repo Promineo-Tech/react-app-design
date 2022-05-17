@@ -2,7 +2,7 @@
 
 ![Pagination](images/pagination.png)
 
-![What's Playing](images/IMDB-API.png)
+![What's Playing](images/now-playing.png)
 
 ![IMDB](images/IMDB.png)
 
