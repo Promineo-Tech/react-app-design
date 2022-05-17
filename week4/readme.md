@@ -14,7 +14,7 @@
 
 
 
-![ENV](images/ENV.png)
+![ENV](images/env.png)
 
 
 ![bundle file](images/bundle.png)
