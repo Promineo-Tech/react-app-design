@@ -3,6 +3,8 @@ import {Routes, Route} from 'react-router-dom';
 import Home from './components/views/Home/Home';
 import Movies from './components/views/Movies/Movies';
 import NowPlaying from './components/views/NowPlaying/NowPlaying';
+import Signup from './components/views/Signup/Signup';
+import Dashboard from './components/views/Dashboard/Dashboard';
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import {navLinks} from "./assets/data/navLinks.js";
@@ -14,6 +16,7 @@ import './assets/styles/global.css';
 const URL = "https://626adc4f6a86cd64adb45a12.mockapi.io/movies"
 
 function App() {
+  const [token, setToken] = useState(false);
   const [movies, setMovies] = useState([]);
   const [featuredMovies, setFeaturedMovies] = useState([]);
   const [visibleMovies, setVisibleMovies] = useState([]);
@@ -93,7 +96,7 @@ function App() {
   return (
 
     <div className="container">
-      <Header links = {navLinks} />
+      <Header links = {navLinks} token = {token} />
       <main>
         <Routes>
             <Route index element={<Home movies={featuredMovies} isLoading={isLoading} />} />
@@ -112,6 +115,9 @@ function App() {
                            }
             />
             <Route path='now-playing' element={<NowPlaying />} />   
+            <Route path='signup' element={<Signup />} />   
+            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='*' element={<Home movies={featuredMovies} isLoading={isLoading} />} />
         </Routes>
       </main>                   
       <Footer />

@@ -1,13 +1,11 @@
 import styles from "./Header.module.css";
 import Navigation from "../Navigation/Navigation.jsx";
-import LoginForm from "../../container/LoginForm/LoginForm.jsx";
 
-const Header = ({links}) =>{
+const Header = ({...props}) =>{
     
     return (
         <header className={styles.header}>
-            <Navigation links={links} />
-            <LoginForm />
+            <Navigation {...props} />
         </header>
     );
 }
