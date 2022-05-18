@@ -3,8 +3,8 @@ import {Routes, Route} from 'react-router-dom';
 import Home from './components/views/Home/Home';
 import Movies from './components/views/Movies/Movies';
 import NowPlaying from './components/views/NowPlaying/NowPlaying';
-import Signup from './components/views/Signup/Signup';
-import Dashboard from './components/views/Dashboard/Dashboard';
+import Login from './components/views/Login/Login';
+import Logout from './components/views/Logout/Logout';
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import {navLinks} from "./assets/data/navLinks.js";
@@ -16,6 +16,8 @@ import './assets/styles/global.css';
 const URL = "https://626adc4f6a86cd64adb45a12.mockapi.io/movies"
 
 function App() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
   const [token, setToken] = useState(false);
   const [movies, setMovies] = useState([]);
   const [featuredMovies, setFeaturedMovies] = useState([]);
@@ -45,6 +47,13 @@ function App() {
           console.log(err);
         })
   }, []);
+
+
+  const loginUser = (username, password) => {
+    setUsername(username);
+    setPassword(password);
+    setToken(true);
+  }
 
   const addReview = (id, rating, comment) => {
    
@@ -96,7 +105,7 @@ function App() {
   return (
 
     <div className="container">
-      <Header links = {navLinks} token = {token} />
+      <Header links = {navLinks} token = {token} username={username} />
       <main>
         <Routes>
             <Route index element={<Home movies={featuredMovies} isLoading={isLoading} />} />
@@ -115,8 +124,8 @@ function App() {
                            }
             />
             <Route path='now-playing' element={<NowPlaying />} />   
-            <Route path='signup' element={<Signup />} />   
-            <Route path='dashboard' element={<Dashboard />} />
+            <Route path='login' element={<Login loginUser = {loginUser} />} />
+            <Route path='logout' element={<Logout username = {username} setToken = {setToken} />} />
             <Route path='*' element={<Home movies={featuredMovies} isLoading={isLoading} />} />
         </Routes>
       </main>                   

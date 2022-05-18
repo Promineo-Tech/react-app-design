@@ -48,7 +48,6 @@ const NowPlaying = () => {
                                   <span>{movie.release}</span>
                              </h3>
                             <h2 className={styles.title}>{movie.title}</h2>
-                           
                         </div>
                     </article>
                 ))

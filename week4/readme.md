@@ -2,9 +2,17 @@
 
 ![Pagination](images/pagination.png)
 
-![Now Playing](images/nowplaying.png)
+![Now Playing](images/now-playing.png)
 
 ![IMDB](images/IMDB-api-now-playing.png)
+
+
+## Higher Order Components (HOC)
+
+
+
+
+
 
 ## Authentication 
 
@@ -43,15 +51,13 @@ For example, you might have public routes that you want anyone accessing, like a
 
 
 
-## Common React Design Libraries (aka. Component Library, UI Framework, etc)
-
-### Reactstrap
-
-<a href="https://www.npmjs.com/package/reactstrap">Reactstrap</a>
-
-### MaterialUI
-
 ### Formik
+
+
+https://cxl.com/blog/form-validation/
+https://alistapart.com/article/inline-validation-in-web-forms/
+
+https://formik.org/docs/overview
 
 ### Be Aware of Bundle Size
 
@@ -62,4 +68,7 @@ https://bundlephobia.com/
 
 
 
+
 ## References
+
+- [Understanding Bundles](https://www.youtube.com/watch?v=MK62LTOt60g)

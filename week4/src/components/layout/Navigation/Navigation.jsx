@@ -7,9 +7,11 @@ const Navigation = ({...props}) => {
 
         let link = {};
 
-        if (item.name === "signup" && props.token) {
+        // note: All links are set to show, so hide either Login or Logout 
+        //       based upon presence of token (user logged-in)
+        if (item.name === "login" && props.token) {
              link = {...item, hidden: true}
-        } else if (item.name === "dashboard" && !props.token) {
+        } else if (item.name === "logout" && !props.token) {
              link = {...item, hidden: true}
         } else {
              link = {...item, hidden: false}
