@@ -4,8 +4,16 @@ import styles from "./Filters.module.css";
 
 const Filters = ({handleFilters}) => {
 
+    const [action, setAction] = useState(false);
+    const [adventure, setAdventure] = useState(false);
+    const [comedy, setComedy] = useState(false);
+    const [drama, setDrama] = useState(false);
+    const [fantasy, setFantasy] = useState(false);
+    const [thriller, setThriller] = useState(false);
+
     const [categories, setCategories] = useState(
-        {  Action: false, 
+        {  
+           Action: false, 
            Adventure: false,
            Comedy: false,
            Drama: false,
@@ -13,12 +21,6 @@ const Filters = ({handleFilters}) => {
            Thriller: false,
         }
     );
-    const [action, setAction] = useState(false);
-    const [adventure, setAdventure] = useState(false);
-    const [comedy, setComedy] = useState(false);
-    const [drama, setDrama] = useState(false);
-    const [fantasy, setFantasy] = useState(false);
-    const [thriller, setThriller] = useState(false);
 
     /*
         Note: When you update state, it happens asynchronously.

@@ -11,7 +11,7 @@ const Navigation = ({...props}) => {
         //       based upon presence of token (user logged-in)
         if (item.name === "login" && props.token) {
              link = {...item, hidden: true}
-        } else if (item.name === "logout" && !props.token) {
+        } else if ((item.name === "logout" || item.name === "dashboard") && !props.token) {
              link = {...item, hidden: true}
         } else {
              link = {...item, hidden: false}
@@ -28,12 +28,16 @@ const Navigation = ({...props}) => {
                     links.map((link, index) => {
                         if (!link.hidden) {
                             return (
-                                <li key={index}><NavLink to={link.url}>{link.text}</NavLink></li>
+                                <li 
+                                        key={index}>
+                                        <NavLink to={link.url}>{link.text}</NavLink>
+                                </li>
                             )
                         }
                  })
                 }
                 </ul>
+               
             </nav>
     )
 }

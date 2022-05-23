@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import {Routes, Route} from 'react-router-dom';
+import ProtectedRoute from './components/container/ProtectedRoute/ProtectedRoute';
 import Home from './components/views/Home/Home';
 import Movies from './components/views/Movies/Movies';
 import NowPlaying from './components/views/NowPlaying/NowPlaying';
+import Dashboard from './components/views/Dashboard/Dashboard';
 import Login from './components/views/Login/Login';
 import Logout from './components/views/Logout/Logout';
+import NotFound from './components/views/NotFound/NotFound';
 import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer/Footer";
 import {navLinks} from "./assets/data/navLinks.js";
@@ -16,6 +19,7 @@ import './assets/styles/global.css';
 const URL = "https://626adc4f6a86cd64adb45a12.mockapi.io/movies"
 
 function App() {
+  const [color, setColor] = useState("#FFF");
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [token, setToken] = useState(false);
@@ -48,7 +52,6 @@ function App() {
         })
   }, []);
 
-
   const loginUser = (username, password) => {
     setUsername(username);
     setPassword(password);
@@ -73,6 +76,9 @@ function App() {
     // reset movies to show all (hidden: false)
     const _movies = [...movies].map(movie => { movie.hidden = false; return movie; });
     const _categories = [];
+
+    // reset current page to 1 (pagination)
+    setCurrentPage(1);
 
     // convert categories to an array
     Object.entries(categories).forEach(([key, value]) => {
@@ -105,14 +111,15 @@ function App() {
   return (
 
     <div className="container">
-      <Header links = {navLinks} token = {token} username={username} />
-      <main>
+      <Header links = {navLinks} token = {token} />
+      <main style={{ backgroundColor: color }}>
         <Routes>
             <Route index element={<Home movies={featuredMovies} isLoading={isLoading} />} />
             <Route 
                   path='movies' 
                   element={
-                             <Movies movies={currentMovies}
+                             <Movies 
+                                     movies={currentMovies}
                                      handleFilters = {handleFilters}
                                      addReview={addReview}
                                      isLoading={isLoading}
@@ -126,12 +133,19 @@ function App() {
             <Route path='now-playing' element={<NowPlaying />} />   
             <Route path='login' element={<Login loginUser = {loginUser} />} />
             <Route path='logout' element={<Logout username = {username} setToken = {setToken} />} />
-            <Route path='*' element={<Home movies={featuredMovies} isLoading={isLoading} />} />
+            <Route 
+                  path='dashboard' 
+                  element={
+                     <ProtectedRoute token={token}>
+                       <Dashboard username = {username} />
+                     </ProtectedRoute>
+                  }
+            />
+            <Route path='*' element={<NotFound setColor={setColor} />} />
         </Routes>
-      </main>                   
+       </main>                   
       <Footer />
     </div>        
-
   );
 }
 

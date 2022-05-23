@@ -228,4 +228,5 @@ In both cases, the ```e``` argument representing the React event will be passed 
 - [React onClick Handlers](https://blog.logrocket.com/a-guide-to-react-onclick-event-handlers-d411943b14dd/)
 - [React Forms Explained](https://www.youtube.com/watch?v=t3r9xW-sxqs)
 - [React and Forms](https://www.youtube.com/watch?v=IkMND33x0qQ)
+- [React Form Reference](https://daveceddia.com/react-forms/)
 - [React Lifecycle Explained - Classes](https://www.youtube.com/watch?v=38Lz08LNKEY)

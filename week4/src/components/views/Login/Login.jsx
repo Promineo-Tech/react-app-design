@@ -1,35 +1,71 @@
- import { useFormik } from 'formik';
+import React, {useState} from "react";
+// import Loader from "../../presentational/BounchingDotsLoader/BounchingDotsLoader";
+import SyncLoader from "react-spinners/SyncLoader";
+import ContentLoader from 'react-content-loader'
+import { useFormik } from "formik";
+import { useNavigate } from "react-router-dom";
+import styles from "./Login.module.css"; 
+import * as Yup from 'yup';
 
- const Login = ({loginUser}) => {
+// https://formik.org/docs/api/useFormik
+
+const Login = ({loginUser}) => {
+
+    const [loading, setLoading] = useState(false);
+    const [color, setColor] = useState("#787878");
+
+    let navigate = useNavigate(); 
 
     const formik = useFormik({
-      initialValues: {
-        username: '',
-        password: ''
-      },
-      onSubmit: values => {
-        loginUser(values.username, values.password);
-      },
+       initialValues: {
+          username: '',
+          password: '',
+       },
+       // aync validation
+       validationSchema: Yup.object({
+            username: Yup.string()
+                .required('Username is required'),
+            password: Yup.string()
+                .required('Password is required')
+       }),
+       onSubmit: values => {
+          if (values.username && values.password) {
+              setLoading(true);
+              loginUser(values.username, values.password);
+               setTimeout(() => {
+                    setLoading(true);
+                    return navigate("/dashboard");
+                }, 2000);
+          }
+       }
     });
+
     return (
-      <form onSubmit={formik.handleSubmit}>
-        <label htmlFor="email">Email Address</label>
-        <input
-          id="username"
-          name="username"
-          onChange={formik.handleChange}
-          value={formik.values.username}
-        />
-         <input
-          id="email"
-          name="email"
-          type="email"
-          onChange={formik.handleChange}
-          value={formik.values.email}
-        />
-  
-        <button type="submit">Submit</button>
-      </form>
+        <div className = {styles.login}>
+            <form className={styles.loginForm} onSubmit={formik.handleSubmit}>
+                <label htmlFor="email">User Name:</label>
+                <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    maxLength="20"
+                    onChange={formik.handleChange}
+                    value={formik.values.username}
+                />
+                { formik.errors.username ? (<div className={styles.error}>{formik.errors.username}</div>) : null }
+                <label htmlFor="password">Password:</label>
+                <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    onChange={formik.handleChange}
+                    value={formik.values.password}
+                />
+                { formik.errors.password ? (<div className={styles.error}>{formik.errors.password}</div>) : null }
+                <button type="submit" disabled={loading}>Login</button>
+            </form>
+            { loading ? (<div className={styles.success}> logging in <SyncLoader loading={loading} color={color} size={12} /></div>) : null }
+        </div>
     );
   };
 

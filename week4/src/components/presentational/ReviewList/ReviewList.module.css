@@ -1,6 +1,7 @@
 .reviewList {
     margin: 0 .5rem 1rem 0;
     overflow-y: auto; /* shows vertical scroll if needed */
+    font-size: 1.3rem; 
 }   
 
 .reviewList ul{
@@ -9,4 +10,9 @@
 
 .reviewList .star {
     pointer-events: none;
+}
+
+.reviewList .reviews {
+   display: flex;
+   flex-direction: column;
 }

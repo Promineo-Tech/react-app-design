@@ -6,6 +6,7 @@ const Header = ({...props}) =>{
     return (
         <header className={styles.header}>
             <Navigation {...props} />
+           
         </header>
     );
 }

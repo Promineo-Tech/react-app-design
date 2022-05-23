@@ -1,4 +1,8 @@
 .nowPlaying {
+    padding: 2%;
+}
+
+.nowPlayingList {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -12,6 +16,8 @@
     margin: .5rem;
     background-color: #f8f9fa; 
     border: 1px solid #ccc;
+    border-radius: 2%;
+    box-shadow: 10px 10px 5px -5px rgba(0,0,0,0.1);
 }
 
 .details {
@@ -36,6 +42,7 @@
 .poster {
     width: 250px;
     height: auto;
+    border-radius: 2% 0 0 0;
 }
 
 .rating {

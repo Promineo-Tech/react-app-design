@@ -22,16 +22,25 @@ export const navLinks = [
     },
     {
       id: 4,
+      name: 'dashboard',
+      text: "Dashboard",
+      url: "/dashboard",
+      username: "",
+      hidden: false
+    },
+    {
+      id: 5,
       name: 'login',
       text: "Login",
       url: "/login",
       hidden: false
     },
     {
-      id: 5,
+      id: 6,
       name: 'logout',
       text: "Logout",
       url: "/logout",
+      username: "",
       hidden: false
-    },
+    }
   ];

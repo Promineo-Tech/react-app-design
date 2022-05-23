@@ -3,11 +3,10 @@ import styles from "./Home.module.css";
 const Home = (props) => {
 
     return (
-        <>
+        <div className={styles.home}>
             <section className={styles.jumbotron}>
                 <h1>Welcome to the Movie Reviewer Database</h1>
-                <p>Comment and rate your favorite movies as well as add your own movies to the database.</p>
-                <p>Fun for the whole family. 🍿 </p>
+                <p>Comment and rate your favorite movies. Fun for the whole family. 🍿 </p>
             </section>
 
             <section className={styles.featuredMoviesContainer}>
@@ -30,7 +29,7 @@ const Home = (props) => {
                 }
                 </div>
             </section>  
-        </>
+        </div>
     );
 }
 

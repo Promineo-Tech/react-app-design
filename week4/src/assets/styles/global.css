@@ -17,20 +17,24 @@
     color: #000;
  }
 
+ /* replaces "sticky" footer */
 .container {
    max-width: 1440px;
    width: 90%;
    margin: auto;
    border:   1px solid #ccc;
+   display: flex;
    min-height: 100vh;
+   flex-direction: column;
 }
 
+/* 
+   issue: can only set background properities (color or image) on <main>
+   use-case: set specific background-image on <NotFound />; container element is not full height
+   solution: unknown
+*/
 main {
-    padding: 2%;  
-}
-
-main p {
-    font-size: 1.3em;
+   flex: 1;
 }
 
 /* ==========================================================================

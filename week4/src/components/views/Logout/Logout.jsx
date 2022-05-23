@@ -1,23 +1,17 @@
 import React, {useEffect} from 'react';
 import { useNavigate } from "react-router-dom";
+import styles from "./Logout.module.css";
 
-const Logout = (userName, setToken) => {
+const Logout = ({username, setToken}) => {
     
     let navigate = useNavigate();   
 
-    /*
-        Logging out a user can be happen automatically or happen after notifiying
-        the user that they have been logged out.
-
-        This example shows the latter.
-
-    */
     useEffect(() => {
-        if (userName){
+        if (username){
             setToken(false);
             const timer = setTimeout(() => {
                return navigate("/");
-            }, 4000);
+            }, 2000);
             return () => clearTimeout(timer);
         } else {
             return navigate("/");
@@ -25,9 +19,9 @@ const Logout = (userName, setToken) => {
      },[]);
 
     return (
-        <>
-        <h1>{userName} is now logged out</h1>
-        </>
+        <div className={styles.logout}>
+           <h2>{username} is now logged out</h2>
+        </div>
     );
 }
 
