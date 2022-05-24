@@ -40,12 +40,89 @@ Benefits of testing:
 
 ![Testing](images/testing-overview.png)
 
-
 ### Jest
 
-- Jest is a unit testing library which allows us to perform unit tests.
-- Jest comes out of the box with create-react-app.
-- When bootstrapping a project with create-react-app, all of our tests must be included in the src directory and will not be compiled on build.
+Jest is a unit testing library which allows us to perform unit tests. It comes out of the box with create-react-app. When bootstrapping a project with create-react-app, all of our tests must be included in the `src` directory and will not be compiled on build.
+
+Normally you would either create a `__tests__` folder and keep all of your test files there or create a separate test file with `.test` in the file name (e.g. `app.test.js`).
+
+Jest is a test runner which can be considered your testing environment which runs your test(s). It is also an assertion library which verifies that things are correct or not. It uses Jasmine behind the scenes.
+
+> There are other testing libraries like Mocha (test runner) and Chai (assertion library).
+
+#### Running your tests
+
+When you use `create-react-app` there is a script already created to run your Jest tests:
+
+```npm run test```
+
+
+```JS
+// app.js:
+
+export const add = (value1, value2) => { 
+    return value1 + value2;
+};
+
+export const total = (shipping, subTotal) => {
+    return '$' + add(shipping, subTotal);
+};
+
+export function highestScore(students) {
+    let result = null;
+    let highScore = 0;
+  
+    for (let i = 0; i < students.length; i++) {
+      let student = students[i];
+      if (student.score > highScore) {
+        highScore = student.score;
+        result = student;
+      }
+    }
+  
+    return result;
+}
+```
+
+```JS
+
+// App.test.js:
+   
+import { add, total, highestScore } from './App';
+
+// unit tests - single function test
+
+test('add - if function defined?', () => {
+  expect(add).toBeDefined(); 
+});
+
+test('add - is function returning a value?', () => {
+  expect(add(1, 2)).toBeDefined();
+});
+
+test('add - verify correct return values', () => {
+  expect(add(1, 2)).toBe(3);
+  expect(add(5, 2)).toBe(7);
+});
+
+test('highest score', () => { 
+  const students = [
+    { name: 'Shane Carey', score: 9.5 },
+    { name: 'Rebecca Mills', score: 8.7 },
+    { name: 'Derek Myers', score: 9.1 },
+  ];
+  const result = highestScore(students);
+  expect(result).toEqual({ name: 'Shane Carey', score: 9.5 });
+});
+
+// integration test - function that relies on another function
+test('total', () => {
+  expect(total(2, 10)).toBe('$12');
+  expect(total(8, 50)).toBe('$58');
+});
+
+```
+
 
 ## Deployment
 
@@ -56,7 +133,7 @@ Benefits of testing:
 - [Testing Overview](https://www.youtube.com/watch?v=u6QfIXgjwGQ)
 - [Test Driven Development](https://www.youtube.com/watch?v=H4Hf3pji7Fw)
 - [Intro to Jest](https://www.youtube.com/watch?v=FgnxcUQ5vho)
-- []()
+- [Jest - Getting Started documentation](https://jestjs.io/docs/getting-started)
 - []()
 - []()
 
