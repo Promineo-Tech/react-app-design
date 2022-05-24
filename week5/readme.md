@@ -58,7 +58,7 @@ When you use `create-react-app` there is a script already created to run your Je
 
 
 ```JS
-// app.js:
+// App.js:
 
 export const add = (value1, value2) => { 
     return value1 + value2;
@@ -122,6 +122,9 @@ test('total', () => {
 });
 
 ```
+
+### Testing React Components
+
 
 
 ## Deployment
