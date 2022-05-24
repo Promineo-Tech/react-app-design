@@ -125,6 +125,11 @@ test('total', () => {
 
 ### Testing React Components
 
+You can also test entire React components, also called mocking components. To do this you use Facebook's native React testing library. This is also provided by `create-react-app`. 
+
+This library will allow us to mount our components in a virtual environment and test them.
+
+
 
 
 ## Deployment
@@ -137,7 +142,9 @@ test('total', () => {
 - [Test Driven Development](https://www.youtube.com/watch?v=H4Hf3pji7Fw)
 - [Intro to Jest](https://www.youtube.com/watch?v=FgnxcUQ5vho)
 - [Jest - Getting Started documentation](https://jestjs.io/docs/getting-started)
-- []()
+- [React Testing Crash Course - Youtube](https://www.youtube.com/watch?v=GLSSRtnNY0g)
+- [DOM Testing Library Documentation](https://testing-library.com/docs/dom-testing-library/intro)
+- [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
 - []()
 
 
