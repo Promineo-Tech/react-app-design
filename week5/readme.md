@@ -41,7 +41,6 @@ Benefits of testing:
 ![Testing](images/testing-overview.png)
 
 
-
 ### Jest
 
 - Jest is a unit testing library which allows us to perform unit tests.
@@ -56,7 +55,7 @@ Benefits of testing:
 
 - [Testing Overview](https://www.youtube.com/watch?v=u6QfIXgjwGQ)
 - [Test Driven Development](https://www.youtube.com/watch?v=H4Hf3pji7Fw)
-- []()
+- [Intro to Jest](https://www.youtube.com/watch?v=FgnxcUQ5vho)
 - []()
 - []()
 - []()
