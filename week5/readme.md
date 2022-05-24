@@ -1,47 +1,65 @@
-## Movie Reviewer Database App - Part 5
+## Testing
 
-## React State Management - Beyond useState
+Testing refers to the process of writing tests for our code based on what we expect to happen and then running our code against those tests. Our code will be considered successful if it passes the tests that we write for it. 
 
-### Context API
+The idea is that we determine from the start what we expect a function or a component to do, write tests to reflect these expectations, and then put our components up against these tests. If they behave the way we expect, then we can move on. Otherwise, we need to refactor our code to pass the tests. 
 
-Conext provides a way to pass data through the component tree without having to pass props down manually at every level.
+There are several common kinds of testing:
+
+- Unit Testing: Used to test a single function.
+- Endpoint Testing: Used to test an endpoint. Postman tests would be an example of this.
+- Component Testing/Mocking Components: Testing a component in a simulated environment.
+- End to End Testing: Simulates a user interacting with the website.
+
+### Test Driven Development
+
+TDD, is a philosophy of first determining what you want your code to do and writing tests that your code will need to pass, and then writing the code.
+
+TDD often takes place at the level of individual functions.
+
+Test-driven development benefits you, the developer, in the following ways:
+
+- It helps you fully understand the requirements for your function because you have to express them by writing test code. This also helps other people understand your code.
+- It helps you relax when code doesn't work. This attitude will help you think more clearly when debugging.
+- It helps you fearlessly refactor and improve your code when you need to, because the tests will let you know if you break anything.
+- It helps you frequently experience the joy of working code, because getting a test to pass feels great.
+
+#### To begin applying TDD to a function, follow the process detailed below:
+
+- Determine inputs, outputs, and the function name. Put another way, what does the function do?
+- Determine the happy path. The term happy path refers to the common scenario for using a function. So determining the happy path means ignoring any exceptions or odd cases (such as a missing parameter).
+- Write the smallest test possible. For example, you may write a test that just checks whether or not the function exists.
+- Write code to make the test pass. If you are testing for whether or not the function exists, you may just write the function.
+- Repeat steps, updating the test to check for the next step on the road to the happy path. For example, the next test that you write maybe that it returns a value.
+- Consider alternative cases and exceptions. For example, what should happen if a parameter is missing?
+
+Benefits of testing:
+
+- You know exactly what you expect to happen right from the start. This reduces debugging time as it allows you to develop in a more isolated environment
+- Allows you to think through your logic beforehand and find any holes you may not have intended.
+
+![Testing](images/testing-overview.png)
 
 
-## React Performance 
 
+### Jest
 
-### Profiler
-
-### Lazy Loading with React.Lazy and Suspense
-
-
-### useMemo
+- Jest is a unit testing library which allows us to perform unit tests.
+- Jest comes out of the box with create-react-app.
+- When bootstrapping a project with create-react-app, all of our tests must be included in the src directory and will not be compiled on build.
 
 ## Deployment
 
 
 
+## Resources
 
-## React Tree Rendering
-
-React renders each child recursively before rendering the next child component and its children. So React renders each compoment branch, one branch at a time.
-
- 1. GrandParent => Parent => Child => GrandChild
- 2. GrandParent => Parent => Child => GrandChild
-
-![Tree Rendering](images/react-tree-rendering.png)
-
-Changes to state or props in any component will recursively re-render down the remaining tree whether those components have changed or not.
-
-![Tree Re-rendining](images/tree-re-rendering.png)
-
-How do you stop the child re-rendering if they do not need to? (e.g. state or props are not passed to those children components).
-
-### useMemo 
-
-useMemo() is a built-in React hook that accepts 2 arguments — a function compute that computes a result and the depedencies array:
-
-const memoizedResult = useMemo(compute, dependencies);
+- [Testing Overview](https://www.youtube.com/watch?v=u6QfIXgjwGQ)
+- [Test Driven Development](https://www.youtube.com/watch?v=H4Hf3pji7Fw)
+- []()
+- []()
+- []()
+- []()
 
 
 
