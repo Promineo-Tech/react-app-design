@@ -31,7 +31,7 @@ Benefits of testing:
 
 ![Testing](images/testing-overview.png)
 
-#### To begin applying TDD to a function, follow the process detailed below:
+To begin applying TDD to a function, follow the process detailed below:
 
 - Determine inputs, outputs, and the function name. Put another way, what does the function do?
 - Determine the happy path. The term happy path refers to the common scenario for using a function. So determining the happy path means ignoring any exceptions or odd cases (such as a missing parameter).
