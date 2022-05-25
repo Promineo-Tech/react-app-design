@@ -24,6 +24,13 @@ Test-driven development benefits you, the developer, in the following ways:
 - It helps you fearlessly refactor and improve your code when you need to, because the tests will let you know if you break anything.
 - It helps you frequently experience the joy of working code, because getting a test to pass feels great.
 
+Benefits of testing:
+
+- You know exactly what you expect to happen right from the start. This reduces debugging time as it allows you to develop in a more isolated environment
+- Allows you to think through your logic beforehand and find any holes you may not have intended.
+
+![Testing](images/testing-overview.png)
+
 #### To begin applying TDD to a function, follow the process detailed below:
 
 - Determine inputs, outputs, and the function name. Put another way, what does the function do?
@@ -32,13 +39,6 @@ Test-driven development benefits you, the developer, in the following ways:
 - Write code to make the test pass. If you are testing for whether or not the function exists, you may just write the function.
 - Repeat steps, updating the test to check for the next step on the road to the happy path. For example, the next test that you write maybe that it returns a value.
 - Consider alternative cases and exceptions. For example, what should happen if a parameter is missing?
-
-Benefits of testing:
-
-- You know exactly what you expect to happen right from the start. This reduces debugging time as it allows you to develop in a more isolated environment
-- Allows you to think through your logic beforehand and find any holes you may not have intended.
-
-![Testing](images/testing-overview.png)
 
 ### Jest
 
@@ -123,12 +123,104 @@ test('total', () => {
 
 ```
 
-### Testing React Components
+### Testing React Components (React Testing Library)
 
-You can also test entire React components, also called mocking components. To do this you use Facebook's native React testing library. This is also provided by `create-react-app`. 
+You can also test entire React components, also called mocking components. To do this you use Facebook's native `React testing library`, which is provided by `create-react-app`. 
 
 This library will allow us to mount our components in a virtual environment and test them.
+The goal of the library is to help you write tests that resemble how a user would use your application. It does this by providing utility methods that will query the DOM in the same way a user would. 
 
+> Under the hood, the library uses the DOM Testing Library for the specific DOM methods. As well uses Jest as the testing framework (aka test runner). It also is very common to use Jest-DOM as a utility library that provides extra Jest assertions (e.g. DOM matchers).
+
+```JS
+
+App.jsx:
+
+export default cont App = () => {
+
+    return (
+        <>
+           <h1>Hello World</h1>
+    )
+}
+```
+
+```JS
+
+App.test.jsx
+
+import { render, screen } from '@testing-library/react';
+import App from './App';
+
+test('renders learn react link', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/hello world/i);
+  expect(linkElement).toBeInTheDocument();
+});
+
+```
+
+The test code above used React Testing Library's <a href="https://testing-library.com/docs/react-testing-library/api/#render">render method</a> to virtually render the App component imported from App.jsx file and append it to the document.body node. You can access the rendered HTML through the <a href="https://testing-library.com/docs/queries/about/#screen">screen object</a>.
+
+> The screen object is part of the core DOM Testing Library.
+
+#### React Testing Library (RTL) Methods for Finding Elements
+
+Most of your React test cases should use methods for finding elements. React Testing Library provides you with several methods to find an element by specific attributes in addition to the getByText() method above:
+
+- <a href="https://testing-library.com/docs/queries/bytext">getByText()</a>: find the element by its textContent value
+- <a href="https://testing-library.com/docs/queries/byrole/">getByRole()</a>: by its role attribute value
+- <a href="https://testing-library.com/docs/queries/bylabeltext/">getByLabelText()</a>: by its label attribute value
+- <a href="https://testing-library.com/docs/queries/byplaceholdertext/">getByPlaceholderText()</a>: by its placeholder attribute value
+- <a href="https://testing-library.com/docs/queries/byalttext/">getByAltText()</a>: by its alt attribute value
+
+#### User Generated Events
+
+Aside from finding whether elements are present in your document body, React Testing Library also helps you test user generated events, like clicking on a button and typing values into a textbox.
+
+```JS
+
+// App.jsx:
+
+export default const App = () => {
+
+    const [buttonColor, setButtonColor] = useState('lime');
+    const newButtonColor = buttonColor === 'lime' ? 'maroon' : 'lime'; 
+
+    return (
+
+        <button style={{backgroundColor: buttonColor}} 
+              onClick={() => setButtonColor(newButtonColor)}>
+              Change color
+        </button>
+    )
+}
+```
+
+```JS
+
+// App.test.js:
+   
+import { render, screen, fireEvent } from '@testing-library/react';
+import App from '../App'; // root folder (src/App.js)
+
+test('button click caused color change', () => {
+    
+    render(<App />);
+    const button = screen.getByRole('button', { name: 'Change color' });
+
+    // trigger event (button click)
+    fireEvent.click(button);
+    
+    // assertion:
+    expect(button).toHaveStyle({
+       backgroundColor: 'maroon'
+    })
+
+});
+```
+
+The test code above uses the `fireEvent` method of the DOM Testing Library to emulate an event of a button click.
 
 
 
