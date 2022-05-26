@@ -282,7 +282,7 @@ If you use `environment variables` you need to specify them in the Build & Deplo
 - [React Testing Crash Course - Youtube](https://www.youtube.com/watch?v=GLSSRtnNY0g)
 - [DOM Testing Library Documentation](https://testing-library.com/docs/dom-testing-library/intro)
 - [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
-- []()
+- [Netlify Documentation](https://docs.netlify.com/)
 
 
 
