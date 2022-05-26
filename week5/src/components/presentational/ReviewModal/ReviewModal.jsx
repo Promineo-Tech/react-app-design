@@ -2,7 +2,8 @@ import ReviewForm from "../../container/ReviewForm/ReviewForm";
 import Modal from 'react-modal';
 import styles from "./ReviewModal.module.css";
 
-Modal.setAppElement('#root');
+// https://github.com/reactjs/react-modal/issues/632
+if (process.env.NODE_ENV !== 'test') Modal.setAppElement('#root');
 
 const modalStyles = {
     content: {

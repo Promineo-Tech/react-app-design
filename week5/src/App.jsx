@@ -68,7 +68,7 @@ function App() {
         comment: comment,
         date: new Date().toISOString(),
     });
-    setMovies(_movies);
+   setMovies(_movies);
   }
 
   const handleFilters = (categories) => {
@@ -108,8 +108,7 @@ function App() {
     setVisibleMovies(_movies.filter(movie => movie.hidden === false));
   }
 
-  return (
-
+   return (
     <div className="container">
       <Header links = {navLinks} token = {token} />
       <main style={{ backgroundColor: color }}>

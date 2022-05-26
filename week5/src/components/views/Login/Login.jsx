@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 // import Loader from "../../presentational/BounchingDotsLoader/BounchingDotsLoader";
 import SyncLoader from "react-spinners/SyncLoader";
-import ContentLoader from 'react-content-loader'
 import { useFormik } from "formik";
 import { useNavigate } from "react-router-dom";
 import styles from "./Login.module.css"; 
