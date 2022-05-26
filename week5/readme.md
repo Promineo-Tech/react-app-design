@@ -275,8 +275,6 @@ Netlify will give you detailed logs on the complete build process as well as a s
 
 ![Netlify-Logs](images/netlify-logs.png)
 
-![Netlify-Deploy-Summary](images/netlify-deploy-summary.png)
-
 If you use `environment variables` you need to specify them in the Build & Deploy => Environment section of you Dashboard.
 
 ![Netlify-Environment-Variables](images/netlify-env-variables.png)
