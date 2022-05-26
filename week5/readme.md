@@ -225,6 +225,8 @@ The test code above uses the `fireEvent` method of the DOM Testing Library to em
 
 ## Deployment
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/ac17a970-2456-4b29-a1da-74910f853945/deploy-status)](https://app.netlify.com/sites/superlative-kitten-43ecf0/deploys)
+
 Your frontend applications can only be hosted locally. If someone wants to view your application, they'll either need to do it on your computer or download your code and run it locally.
 
 Making your application accessible on the web requires you to `deploy` it. Deploying a web application means making it accessible through an URL. 
