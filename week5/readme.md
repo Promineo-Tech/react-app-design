@@ -223,11 +223,51 @@ test('button click caused color change', () => {
 
 The test code above uses the `fireEvent` method of the DOM Testing Library to emulate an event of a button click.
 
-
-
 ## Deployment
 
+Your frontend applications can only be hosted locally. If someone wants to view your application, they'll either need to do it on your computer or download your code and run it locally.
 
+Making your application accessible on the web requires you to `deploy` it. Deploying a web application means making it accessible through an URL. 
+
+There are typically three environments you deploy to:
+
+ - The `development` environment on your computer.
+ - The `staging` environment references a deployed version used to test changes being made.
+ - The `production` environment references a deployed version of the application that is  "complete". This version can be seen by your users.
+
+### The Deployment Process
+
+This requires to recreate your development environment on another machine. That machine which is called a server needs to be configured to run your application on the internet.
+
+Manually deploying a website and setting up an environment is usually knowns as `DevOps`. But there are a number of tools and services that make it much easier.
+
+No matter what service you use, you usually need to follow steps in a particular order.
+
+### Common services
+
+There are a number of services that will host static websites (with HTML, CSS, and JS) for free or for a reduced cost. `GitHub` allows for deploying static websites as well as domain services like `GoDaddy` and Name.com.
+
+One of the most popular solutions, `Amazon Web Services` (AWS) runs the web. Working with AWS can be complicated and costly for newbies, but it's an industry standard for most large applications.
+
+`Heroku` is one of the more popular options, particularly among those who have a full-stack application. They have a command-line interface and can perform many of the same tasks that AWS and Azure can, with less configuratiohn
+
+`Netlify` and `Vercel`, has become more popular as JavaScript has become more popular as both a frontend and backend language. Unlike Heroku, Netlify and Vercel only deploy front-end applications.
+
+### Build Process
+
+The process of preparing your application for production is called `building`. The build process converts your source code into an "executable" bundle to be used by the browser.
+
+The `build` is an artifact which is produced during the build process that includes interpreted source code and compiled assets.
+
+So the `deployment` is the process of putting (deploying) the buils to a server.
+
+#### Using Netlify
+
+To use Netlify to deploy your React app, all you need to do is deploy your source to a standalone Github repo and follow their online build process. You will need to give authorization to your Github account and specify what Github repo you wish to deploy.
+
+After a few steps it will start the build process and give you randomly generated URL for you to see your deployed React app.
+
+![Netlify-Build](images/netlify-build.png)
 
 ## Resources
 
