@@ -273,6 +273,11 @@ If you use `environment variables` you need to specify them in the Build & Deplo
 
 ![Netlify-Environment-Variables](images/netlify-env-variables.png)
 
+> Netlify by default will treat warnings in your React app as errors and will cause your build process to fail deployment. You can change that setting to ignore warnings in your build process.
+
+![Netlify-Ignore-Warnings](images/netlify-ignore-warnings.png)
+
+
 ## Resources
 
 - [Testing Overview](https://www.youtube.com/watch?v=u6QfIXgjwGQ)
