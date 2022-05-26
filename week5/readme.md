@@ -269,6 +269,12 @@ After a few steps it will start the build process and give you randomly generate
 
 ![Netlify-Build](images/netlify-build.png)
 
+Netlify will give you detailed logs on the complete build process as well as a summary.
+
+![Netlify-Logs](images/netlify-deploy-logs.png)
+
+![Netlify-Deploy-Summary](images/netlify-deploy-summary.png)
+
 If you use `environment variables` you need to specify them in the Build & Deploy => Environment section of you Dashboard.
 
 ![Netlify-Environment-Variables](images/netlify-env-variables.png)
