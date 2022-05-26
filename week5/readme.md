@@ -271,7 +271,7 @@ After a few steps it will start the build process and give you randomly generate
 
 ![Netlify-Build](images/netlify-build.png)
 
-Netlify will give you detailed logs on the complete build process as well as a summary:
+Netlify will give you detailed logs on the complete build process:
 
 ![Netlify-Logs](images/netlify-logs.png)
 
