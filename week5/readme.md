@@ -263,7 +263,7 @@ The `build` is an artifact which is produced during the build process that inclu
 
 So the `deployment` is the process of putting (deploying) the buils to a server.
 
-#### Using Netlify
+### Using Netlify
 
 To use Netlify to deploy your React app, all you need to do is deploy your source to a standalone Github repo and follow their online build process. You will need to give authorization to your Github account and specify what Github repo you wish to deploy.
 
