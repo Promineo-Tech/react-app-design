@@ -283,6 +283,23 @@ If you use `environment variables` you need to specify them in the Build & Deplo
 
 ![Netlify-Ignore-Warnings](images/netlify-ignore-warnings.png)
 
+### Client Routing vs Sever-side Routing
+
+React Router handles routing on the client-side (browser) but when you visit the non-root page by typing a route in the browser url (e.g. https://javascriptisking.com/movies), Netlify (server-side) does not know how to handle the route and gives you a `Page Not Found" server message.
+
+![Netlify-Ignore-Warnings](images/netlify-ignore-warnings.png)
+
+Even though if you click a link (created by a <NavLink />) it works fine. So what gives?
+
+The reason is that your client routing behaves only using the components used with `react-router-dom`, but when you type in a route that mimicks what would be rendered in your React app in the browser's url that address is requested to the server (i.e. Netlify) causing a `Page Not Found` server message.
+
+![Netlify-Page-Not-Found](images/netlify-page-not-found.png)
+
+To fix this issue, we need to create a file names `_redirects` to the root of the site in the `public` folder (not src).
+
+```
+/* /index.html 200
+```
 
 ## Resources
 
@@ -295,3 +312,4 @@ If you use `environment variables` you need to specify them in the Build & Deplo
 - [React Testing Library Documentation](https://testing-library.com/docs/react-testing-library/intro/)
 - [Netlify Documentation](https://docs.netlify.com/)
 - [Netlify Support Forums](https://www.netlify.com/community/)
+- [Netlify _redirects](https://docs.netlify.com/routing/redirects/rewrites-proxies/#history-pushstate-and-single-page-apps)
